@@ -3,7 +3,7 @@
     require_once(__DIR__ . "/../model/database.php");
     
     //open connection using connection variable
-    //use mysquli to build a new object
+    //use mysqli to build a new object
     $connection = new mysqli($host, $username, $password);
     
     //check to see if it is successful or not
@@ -28,8 +28,8 @@
         }
     }
     else {
-        
-        echo "Successfully created database";
+        //echo out database alreday exists
+        echo "Database already exists";
         
     }
     

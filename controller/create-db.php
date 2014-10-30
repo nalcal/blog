@@ -23,15 +23,15 @@
         //output a message
         //tells if it is true or false
         if($query) {
-            echo "Successfully created database:" . $database;
-            
+            echo "Successfully created database:" . $database;          
         }
     }
     else {
         //echo out database alreday exists
         echo "Database already exists";
-        
     }
-    
+    //create a table
+    $query = $connection->query("CREATE TABLE posts ("
+            . "id int (11) NOT NULL AUTO_INCREMENT");
     //close connection
     $connection->close();

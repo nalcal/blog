@@ -30,8 +30,13 @@
         //echo out database alreday exists
         echo "Database already exists";
     }
-    //create a table
+    //created a query create a table is called post 
+    //it needs to have an id(int), title(string of charaters), post text
+    //all of them have to be not null
     $query = $connection->query("CREATE TABLE posts ("
-            . "id int (11) NOT NULL AUTO_INCREMENT");
+            . "id int (11) NOT NULL AUTO_INCREMENT,"
+            . "title varchar(255) NOT NULL,"
+            . "post text NOT NULL,"
+            . "PRIMARY KEY (id))");
     //close connection
     $connection->close();

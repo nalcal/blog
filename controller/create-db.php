@@ -10,7 +10,7 @@
     //to see if it has a connection error
     if($connection->connect_error){
         //tells use why we killed it off
-        die("Error: " . $connection->connect_error);    
+        die("<p>Error: " . $connection->connect_error . "</p>");    
     }
     //creating a database 
     //tell us if it is true or not true
@@ -23,12 +23,12 @@
         //output a message
         //tells if it is true or false
         if($query) {
-            echo "Successfully created database:" . $database;          
+            echo "<p>Successfully created database:" . $database . "</p>";          
         }
     }
     else {
         //echo out database alreday exists
-        echo "Database already exists";
+        echo "<p>Database already exists</p>";
     }
     //created a query create a table is called post 
     //it needs to have an id(int), title(string of charaters), post text
@@ -38,5 +38,13 @@
             . "title varchar(255) NOT NULL,"
             . "post text NOT NULL,"
             . "PRIMARY KEY (id))");
+    //echo connect to query
+    if($query){
+       echo "<p>Succesfully created table: posts</p>"; 
+    }
+    //to see if there is an error connection
+    else{
+        echo "<p>$connection->error</p>";
+    }
     //close connection
     $connection->close();

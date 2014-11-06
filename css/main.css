@@ -1,4 +1,12 @@
 //background color is aqua
 body{
-    background-color: aqua;
+    background-color: green;
 }
+
+//this is for iphone
+@media screen and (max-width: 40em){
+    html{
+        background-color:blue;
+    }
+}
+

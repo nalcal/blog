@@ -9,10 +9,20 @@ $title = filter_input(INPUT_POST, "title", FILTER_SANITIZE_STRING);
 //we want to post it to recive the information
 //we are going to filter that input with FILTER_SANITIZE_STRING 
 $post = filter_input(INPUT_POST, "post", FILTER_SANITIZE_STRING);
-//we are going to echo about this title
-echo "<p> Title: $title </p>";
+//running a query to insert things
 
-//we are going to echo about this title
-echo "<p> Post: $post </p>";
+$query = $connection->query("INSERT INTO posts SET title = '$title', post = '$post'");
+
+//creating an if statement
+
+if($query){
+    echo "<p>Successfully inserted post: $title</p>"; 
+}
+//creating a else statement
+else{
+    echo "<p>$connection->error</p>";
+    
+}
+
 //closeing tag for connection
 $connection->close();

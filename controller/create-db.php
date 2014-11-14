@@ -1,11 +1,10 @@
 <?php //starting tag
-    //_DIR_ conatinates to create folder go to model then do to database?
-    require_once(__DIR__ . "/../model/database.php");
-    
+    //_DIR_ conatinates to create folder go to model then do to config?
+    //changed it to config
+    require_once(__DIR__ . "/../model/config.php");
     //open connection using connection variable
     //use mysqli to build a new object
     $connection = new mysqli($host, $username, $password);
-    
     //check to see if it is successful or not
     //to see if it has a connection error
     if($connection->connect_error){

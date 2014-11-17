@@ -16,6 +16,19 @@ class Database {
         $this->password = $password;
         $this->database = $database;
     }
+    //created a open connection
+    public function openConnection(){
+ 
+    }
+    //created a close connection
+    public function closeConnection(){
+        
+    }
+    //created a query 
+    //connected to a string
+    public function query($string){
+        
+    }
     
     
 }
